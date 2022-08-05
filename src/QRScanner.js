@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { RNCamera } from "react-native-camera";
+// import { RNCamera } from "react-native-camera";
 import PropTypes from "prop-types";
 
 import {
@@ -58,58 +58,7 @@ export default class QRScanner extends PureComponent {
           flex: 1
         }}
       >
-        <RNCamera
-          style={{
-            flex: 1
-          }}
-          captureAudio={false}
-          onBarCodeRead={this._handleBarCodeRead}
-          androidCameraPermissionOptions={null}
-          androidRecordAudioPermissionOptions={null}
-          notAuthorizedView={this.props.notAuthorizedView()}
-          barCodeTypes={[RNCamera.Constants.BarCodeType.qr]}
-          flashMode={
-            !this.props.flashMode
-              ? RNCamera.Constants.FlashMode.off
-              : RNCamera.Constants.FlashMode.torch
-          }
-          zoom={this.props.zoom}
-          type={this.props.cameraType}
-        >
-          <View style={[styles.topButtonsContainer, this.props.topViewStyle]}>
-            {this.props.renderTopView()}
-          </View>
-          <QRScannerView
-            maskColor={this.props.maskColor}
-            cornerColor={this.props.cornerColor}
-            borderColor={this.props.borderColor}
-            rectHeight={this.props.rectHeight}
-            rectWidth={this.props.rectWidth}
-            borderWidth={this.props.borderWidth}
-            cornerBorderWidth={this.props.cornerBorderWidth}
-            cornerBorderLength={this.props.cornerBorderLength}
-            cornerOffsetSize={this.props.cornerOffsetSize}
-            isCornerOffset={this.props.isCornerOffset}
-            bottomHeight={this.props.bottomHeight}
-            scanBarAnimateTime={this.props.scanBarAnimateTime}
-            scanBarColor={this.props.scanBarColor}
-            scanBarHeight={this.props.scanBarHeight}
-            scanBarMargin={this.props.scanBarMargin}
-            hintText={this.props.hintText}
-            hintTextStyle={this.props.hintTextStyle}
-            scanBarImage={this.props.scanBarImage}
-            hintTextPosition={this.props.hintTextPosition}
-            isShowScanBar={this.props.isShowScanBar}
-            finderX={this.props.finderX}
-            finderY={this.props.finderY}
-            returnSize={this.barCodeSize}
-          />
-          <View
-            style={[styles.bottomButtonsContainer, this.props.bottomViewStyle]}
-          >
-            {this.props.renderBottomView()}
-          </View>
-        </RNCamera>
+     
       </View>
     );
   }
